@@ -1,13 +1,14 @@
 <html>
   <head>
     <title>fortune cookie</title>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
   </head>
   <body>
-    <div class="flexbox-container">
+    <div class="flexbox-container" id="container">
       <div id="fortune-cookie-text">
 	<div id="quote">
-	  <p id="quote"></p>
+	  <p id="quote2"></p>
 	</div>
       </div>
     </div>
@@ -17,16 +18,19 @@
 
       
     </div>
-      <div class="flexbox-container">
-	<button id="fortuneButton" type="button" onClick="nextCookie(cookies)">Make My Fortune!</button>
-	<button id="fortuneButton2" type="button" onClick="viewAllCookies(cookies)">View All Cookies!</button>
-	
+      <div class="flexbox-container" id="buttons">
+	<button class="fortuneButton" type="button" onClick="nextCookie(cookies)">Make My Fortune!</button>
+	<button class="fortuneButton" type="button" onClick="viewAllCookies(cookies)">View All Cookies!</button>
       </div>
 
       <div class="flexbox-container">
-      <div id="previous-fortunes">
-	<ul id="demo"></ul>
-      </div>
+	<h2 id="PF">Previous Fortunes</h2>
+	    </div>
+	    
+      <div class="flexbox-container">
+	<div id="previous-fortunes">
+	<ul id="demo" style="list-style: none;"></ul>
+	</div>
       </div>
       
 

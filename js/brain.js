@@ -11,7 +11,7 @@ var cookies = [
     "You will soon be going on an adventure.",
     "Some fortune cookies have no fortune.",
     "Bad luck and extreme misfortune will infest your soul for all eternity.",
-    "Help! I'm trapped in a fortune cookie factory!"
+    "Help! I'm trapped in a fortune cookie factory!",
     
     ]
 
@@ -37,19 +37,27 @@ function shuffle(arr) {
 
 var counter = 0
 function nextCookie(arr) {
+    var oldQuote = arr[counter];
+    counter++;
     CookiesEaten(1);
     document.getElementById('quote').innerHTML = arr[counter];
-    var entry = document.createElement('li');
-    entry.appendChild(document.createTextNode(arr[counter]));
-    list.appendChild(entry);
-    counter++
+    var itm = document.getElementById('fortune-cookie-text');
+    var entry = itm.cloneNode(true);
+
+    if (counter>1) {
+	entry.classList.add("fade-in");
+	entry.innerHTML = oldQuote;
+	entry.style.marginTop = "20px";
+	list.insertBefore(entry, list.firstChild); //pushes to top instead bottom
+    }
 
     //when all cookies are read, shuffle them again and start from the beginning
-    if (counter === arr.length) {
+    if (counter === arr.length-1) {
 	shuffle(arr);
 	counter = 0;
     }
 }
+
 
 function viewAllCookies(arr) {
     CookiesEaten(arr.length)
