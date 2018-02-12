@@ -1,0 +1,30 @@
+#quote {
+    padding: 2em;
+}
+
+.flexbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4em;
+}
+    
+
+#fortune-cookie-text {
+    text-align: center;
+    border-style:solid;
+    border-color:green;
+    min-height:200px;
+    height:auto;
+    width:400px;
+    color:blue;
+}
+
+#previous-fortunes {
+    border-style:solid;
+    border-color:green;
+    height:auto;
+    width:500px;
+    color:blue;
+}
+

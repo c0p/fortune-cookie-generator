@@ -1,0 +1,80 @@
+var cookies = [
+    "If you're looking to a cookie for help, you should probably reevaluate your life choices.",
+    "You will now eat a stale cookie.",
+    "Sorry Mario, your fortune is in another cookie!",
+    "You will spend time reading these fortunes to those close to you.",
+    "Maybe not fortunes, but coupons for your next Asian meal. They're more useful.",
+    "life is meaningless and we all die alone.",
+    "Do not be discouraged, everyone begins in ignorance.",
+    "You will remember this fortune cookie.",
+    "Ignore previous cookie.",
+    "You will soon be going on an adventure.",
+    "Some fortune cookies have no fortune.",
+    "Bad luck and extreme misfortune will infest your soul for all eternity.",
+    "Help! I'm trapped in a fortune cookie factory!"
+    
+    ]
+
+var FortuneSeen = 0;
+
+function CookiesEaten(val) {
+    FortuneSeen += val
+    document.getElementById('stats').innerHTML = "You've made " + FortuneSeen + " Fortunes";
+}
+
+var list = document.getElementById('demo');
+
+function shuffle(arr) {
+    for (var i=arr.length-1; i>=0; i--) {
+	var temp = Math.floor(Math.random()*arr.length);
+	var tempValue = arr[temp]
+	arr[temp] = arr[i]
+	arr[i] = tempValue
+    }
+    return arr
+}
+
+
+var counter = 0
+function nextCookie(arr) {
+    CookiesEaten(1);
+    document.getElementById('quote').innerHTML = arr[counter];
+    var entry = document.createElement('li');
+    entry.appendChild(document.createTextNode(arr[counter]));
+    list.appendChild(entry);
+    counter++
+
+    //when all cookies are read, shuffle them again and start from the beginning
+    if (counter === arr.length) {
+	shuffle(arr);
+	counter = 0;
+    }
+}
+
+function viewAllCookies(arr) {
+    CookiesEaten(arr.length)
+    var quoteBox = document.getElementById('quote');
+    quoteBox.innerHTML = "";
+    shuffle(arr)
+    for (var i=0; i<=arr.length-1; i++) {
+	var quoteBox = document.getElementById('quote');
+	var line = document.createElement("p");
+	line.innerHTML = arr[i];
+	quoteBox.appendChild(line);
+	var entry = document.createElement('li');
+	entry.appendChild(document.createTextNode(arr[i]));
+	list.appendChild(entry);
+	
+    }
+}
+
+
+
+
+
+
+
+
+	
+	
+
