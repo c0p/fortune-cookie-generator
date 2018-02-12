@@ -1,3 +1,12 @@
+#cookie {
+    position:fixed;
+    bottom:-5px;
+    right:-5px;
+    width:250px;
+    height:200px;
+}
+
+
 .fortuneButton {
     margin: 10px;
   background: #c3c7c5;
@@ -66,7 +75,7 @@
 
 #previous-fortunes {
     height:auto;
-    color:#F9A03F;
+    color:black;
 }
 
 

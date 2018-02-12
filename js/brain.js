@@ -48,6 +48,7 @@ function nextCookie(arr) {
 	entry.classList.add("fade-in");
 	entry.innerHTML = oldQuote;
 	entry.style.marginTop = "20px";
+	entry.style.borderColor = "#808F85";
 	list.insertBefore(entry, list.firstChild); //pushes to top instead bottom
     }
 
