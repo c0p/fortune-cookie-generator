@@ -5,34 +5,33 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
   </head>
   <body>
-    <a href="https://github.com/c0p">
+
+    <div class="flexbox-container">
+          <a href="https://github.com/c0p">
       <img id="cookie" src="imgs/cookie.png" alt="cookie View">
       </a>
+      
+      </div>
+
     <div class="flexbox-container" id="container">
       <div id="fortune-cookie-text">
 	<div id="quote">
-	  <p id="quote2"></p>
 	</div>
       </div>
     </div>
 
     <div class="flexbox-container">
       <h2 id="stats">You've ate 0 Fortunes</h2>
-
-      
     </div>
       <div class="flexbox-container" id="buttons">
 	<button class="fortuneButton" type="button" onClick="nextCookie(cookies)">Make My Fortune!</button>
-	<button class="fortuneButton" type="button" onClick="viewAllCookies(cookies)">View All Cookies!</button>
+	<button class="fortuneButton" type="button" onClick="viewAllCookies(cookies)">Family Size Fortune!</button>
       </div>
-
       <div class="flexbox-container">
-	<h2 id="PF">Previous Fortunes</h2>
+	<h2 id="PF">Previous Fortunes -></h2>
 	    </div>
 	    
-      <div class="flexbox-container">
-	<div id="previous-fortunes">
-	<ul id="demo" style="list-style: none;"></ul>
+      <div class="flexbox-container" id="demo">
 	</div>
       </div>
       

@@ -43,6 +43,7 @@ function nextCookie(arr) {
     document.getElementById('quote').innerHTML = arr[counter];
     var itm = document.getElementById('fortune-cookie-text');
     var entry = itm.cloneNode(true);
+    entry.classList.add("scale");
 
     if (counter>1) {
 	entry.classList.add("fade-in");
@@ -70,8 +71,9 @@ function viewAllCookies(arr) {
 	var line = document.createElement("p");
 	line.innerHTML = arr[i];
 	quoteBox.appendChild(line);
-	var entry = document.createElement('li');
-	entry.appendChild(document.createTextNode(arr[i]));
+	var itm = document.getElementById('fortune-cookie-text');
+	var entry = itm.cloneNode(true);
+	entry.innerHTML = arr[i]
 	list.appendChild(entry);
 	
     }

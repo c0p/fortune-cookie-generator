@@ -8,7 +8,7 @@
 
 
 .fortuneButton {
-    margin: 10px;
+  margin: 10px;
   background: #c3c7c5;
   background-image: -webkit-linear-gradient(top, #c3c7c5, #2980b9);
   background-image: -moz-linear-gradient(top, #c3c7c5, #2980b9);
@@ -88,15 +88,33 @@
     }
 }
 
-@keyframes fadeOut {
-    from {
-        opacity: 1;
+@keyframes scale {
+    0% {
+        transform: scale(0.0);
     }
-    to {
-        opacity: 0;
+    100% {
+        transform: scale(1.0);
     }
 }
 
+@keyframes scalePress {
+    0% {
+        transform: scale(1.0);
+    }
+    100% {
+        transform: scale(0.5);
+    }
+}
+
+
 .fade-in{
     animation: fadeIn 2s forwards;
+}
+
+.scale{
+    animation: scale 0.4s forwards;
+}
+
+.fortuneButton:active {
+    transform: scale(0.9);
 }
