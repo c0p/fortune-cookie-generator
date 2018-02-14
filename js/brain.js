@@ -1,3 +1,5 @@
+
+
 var cookies = [
     "If you're looking to a cookie for help, you should probably reevaluate your life choices.",
     "You will now eat a stale cookie.",
@@ -44,17 +46,19 @@ function nextCookie(arr) {
     var itm = document.getElementById('fortune-cookie-text');
     var entry = itm.cloneNode(true);
     entry.classList.add("scale");
+    itm.classList.add("fade-in");
 
     if (counter>1) {
-	entry.classList.add("fade-in");
 	entry.innerHTML = oldQuote;
 	entry.style.marginTop = "20px";
 	entry.style.borderColor = "#808F85";
 	list.insertBefore(entry, list.firstChild); //pushes to top instead bottom
     }
+    
 
     //when all cookies are read, shuffle them again and start from the beginning
     if (counter === arr.length-1) {
+	itm.classList.remove("fade-in");
 	shuffle(arr);
 	counter = 0;
     }
@@ -78,11 +82,6 @@ function viewAllCookies(arr) {
 	
     }
 }
-
-
-
-
-
 
 
 
