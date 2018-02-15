@@ -24,14 +24,14 @@ function CookiesEaten(val) {
     document.getElementById('stats').innerHTML = "You've made " + FortuneSeen + " Fortunes";
 }
 
-var list = document.getElementById('demo');
+var list = document.getElementById('oldCookies');
 
 function shuffle(arr) {
     for (var i=arr.length-1; i>=0; i--) {
-	var temp = Math.floor(Math.random()*arr.length);
-	var tempValue = arr[temp]
-	arr[temp] = arr[i]
-	arr[i] = tempValue
+		var temp = Math.floor(Math.random()*arr.length);
+		var tempValue = arr[temp]
+		arr[temp] = arr[i]
+		arr[i] = tempValue
     }
     return arr
 }
@@ -39,7 +39,7 @@ function shuffle(arr) {
 
 var counter = 0
 function nextCookie(arr) {
-    var oldQuote = arr[counter];
+    var currentCookie = arr[counter];
     counter++;
     CookiesEaten(1);
     document.getElementById('quote').innerHTML = arr[counter];
@@ -49,18 +49,18 @@ function nextCookie(arr) {
     itm.classList.add("fade-in");
 
     if (counter>1) {
-	entry.innerHTML = oldQuote;
-	entry.style.marginTop = "20px";
-	entry.style.borderColor = "#808F85";
-	list.insertBefore(entry, list.firstChild); //pushes to top instead bottom
+		entry.innerHTML = currentCookie; //old cookies goes to trasholdCookies
+		entry.style.marginTop = "20px";
+		entry.style.borderColor = "#808F85";
+		list.insertBefore(entry, list.firstChild); //pushes to top instead bottom
     }
     
 
     //when all cookies are read, shuffle them again and start from the beginning
     if (counter === arr.length-1) {
-	itm.classList.remove("fade-in");
-	shuffle(arr);
-	counter = 0;
+		itm.classList.remove("fade-in");
+		shuffle(arr);
+		counter = 0;
     }
 }
 
@@ -71,14 +71,14 @@ function viewAllCookies(arr) {
     quoteBox.innerHTML = "";
     shuffle(arr)
     for (var i=0; i<=arr.length-1; i++) {
-	var quoteBox = document.getElementById('quote');
-	var line = document.createElement("p");
-	line.innerHTML = arr[i];
-	quoteBox.appendChild(line);
-	var itm = document.getElementById('fortune-cookie-text');
-	var entry = itm.cloneNode(true);
-	entry.innerHTML = arr[i]
-	list.appendChild(entry);
+		var quoteBox = document.getElementById('quote');
+		var line = document.createElement("p");
+		line.innerHTML = arr[i];
+		quoteBox.appendChild(line);
+		var itm = document.getElementById('fortune-cookie-text');
+		var entry = itm.cloneNode(true);
+		entry.innerHTML = arr[i]
+		list.appendChild(entry);
 	
     }
 }
