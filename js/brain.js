@@ -27,6 +27,7 @@ function CookiesEaten(val) {
 var list = document.getElementById('oldCookies');
 
 function shuffle(arr) {
+    //dat fisher-yates shuffle 
     for (var i=arr.length-1; i>=0; i--) {
 		var temp = Math.floor(Math.random()*arr.length);
 		var tempValue = arr[temp]
